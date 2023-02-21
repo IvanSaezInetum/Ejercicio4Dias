@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    stages {
+        stage('Lunes') {
+            steps {
+              script{
+                  println "Lunes"
+              }
+            }
+        }
+      stage('Martes') {
+            steps {
+              script{
+                def dia_completo = new Date()
+                println "Martes"
+                println dia_completo
+                }
+                
+              }
+            }
+      stage('Miercoles') {
+            steps {
+              script{
+                println "Miercoles"
+              }
+            }
+        }
+      stage('Jueves') {
+            steps {
+              script{
+                   println "Jueves"
+              }
+            }
+        }
+      stage('Viernes') {
+            steps {
+              script{
+                  println "Viernes"
+                  println("El nombre de usuario que ejecuto la tarea es Iván Sáez Bueno")
+              }
+            }
+        }
+    }
+}
