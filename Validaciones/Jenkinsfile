@@ -1,9 +1,11 @@
+def day = new Date().getDay()
 pipeline {
     agent any
     stages {
         stage('Lunes') {
             steps {
               script{
+                  if(day==1)
                   println "Lunes"
               }
             }
@@ -11,9 +13,12 @@ pipeline {
       stage('Martes') {
             steps {
               script{
-                def dia_completo = new Date()
-                println "Martes"
-                println dia_completo
+                  if(day==2){
+                     def dia_completo = new Date()
+                    println "Martes"
+                    println dia_completo
+                  }
+                
                 }
                 
               }
@@ -21,13 +26,15 @@ pipeline {
       stage('Miercoles') {
             steps {
               script{
-                println "Miercoles"
+                  if(day==3)
+                    println "Miercoles"
               }
             }
         }
       stage('Jueves') {
             steps {
               script{
+                  if(day==4)
                    println "Jueves"
               }
             }
@@ -35,8 +42,11 @@ pipeline {
       stage('Viernes') {
             steps {
               script{
-                  println "Viernes"
-                  println("El nombre de usuario que ejecuto la tarea es Iván Sáez Bueno")
+                  if(day==5){
+                      println "Viernes"
+                    println("El nombre de usuario que ejecuto la tarea es Iván Sáez Bueno")
+                  }
+                 
               }
             }
         }
